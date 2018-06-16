@@ -48,6 +48,25 @@ const StyledSider = styled(Sider)`
   width: 10%;
 `
 
+const SidebarLink = styled.li`
+  color: ${({ theme }) => theme.color.primaryText};
+
+  a {
+    color: ${({ theme }) => theme.color.primaryText};
+
+    &:hover {
+      color: ${({ theme }) => theme.color.primaryText};
+    }
+  }
+`
+
+const sideMenuLinks = [
+  {
+    label: 'Times',
+    to: '/teams'
+  }
+]
+
 const CustomLayout = ({ title, menus = [], sider = true, children }) => (
   <ThemeProvider theme={theme}>
     <StyledLayout>
@@ -60,7 +79,17 @@ const CustomLayout = ({ title, menus = [], sider = true, children }) => (
         ))}
       </StyledHeader>
       <StyledMainLayout>
-        {sider && <StyledSider>Sider</StyledSider>}
+        {sider && (
+          <StyledSider>
+            <ul>
+              {sideMenuLinks.map(link => (
+                <SidebarLink key={link.label}>
+                  <Link to={link.to}>{link.label}</Link>
+                </SidebarLink>
+              ))}
+            </ul>
+          </StyledSider>
+        )}
         <Content>{children}</Content>
       </StyledMainLayout>
     </StyledLayout>
