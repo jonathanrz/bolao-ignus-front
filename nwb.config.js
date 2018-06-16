@@ -3,7 +3,7 @@ module.exports = {
   webpack: {
     publicPath: '',
     define: {
-      __MYINVESTMENTS_API__: JSON.stringify(process.env.MYINVESTMENTS_API)
+      __API_URL__: JSON.stringify(process.env.API_URL)
     }
   },
   babel: {

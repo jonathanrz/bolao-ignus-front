@@ -1,7 +1,7 @@
 {
-  "name": "myinvestments-apollo",
+  "name": "bolao-ignus-front",
   "version": "1.0.0",
-  "description": "Describe myinvestments-apollo here",
+  "description": "Front of bolao-ignus",
   "private": true,
   "scripts": {
     "build": "nwb build-react-app",

@@ -6,11 +6,10 @@ import { ApolloProvider } from 'react-apollo'
 
 import Login from './pages/Login'
 import Dashboard from './pages/Dashboard'
-import Investment from './pages/Investment'
-import NewInvestment from './pages/NewInvestment'
+import Teams from './pages/Teams'
 
 const client = new ApolloClient({
-  uri: __MYINVESTMENTS_API__, //eslint-disable-line no-undef
+  uri: __API_URL__, //eslint-disable-line no-undef
   request: async operation => {
     const token = localStorage.getItem('token')
     if (token) {
@@ -29,8 +28,7 @@ const ApolloApp = () => (
       <div>
         <Route exact path="/" component={Dashboard} />
         <Route path="/login" component={Login} />
-        <Route path="/new-investment" component={NewInvestment} />
-        <Route path="/investment/:uuid" component={Investment} />
+        <Route path="/teams" component={Teams} />
       </div>
     </Router>
   </ApolloProvider>
