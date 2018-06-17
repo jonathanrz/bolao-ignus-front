@@ -1,5 +1,6 @@
 import React from 'react'
 import { Query } from 'react-apollo'
+import { sortBy } from 'lodash'
 
 import Loader from 'app/components/Loader'
 import Table from 'app/components/Table'
@@ -11,7 +12,7 @@ const columns = [
 ]
 
 function Teams({ data }) {
-  return <Table data={data} columns={columns} />
+  return <Table data={sortBy(data, 'name')} columns={columns} />
 }
 
 const TeamsQuery = () => (

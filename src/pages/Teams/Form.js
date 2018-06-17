@@ -10,9 +10,14 @@ const Container = styled.div`
 class TeamForm extends React.Component {
   handleSubmit = e => {
     e.preventDefault()
-    this.props.form.validateFields((err, fieldsValue) => {
+    const { form } = this.props
+    form.validateFields((err, fieldsValue) => {
       if (err) return
       this.props.createTeam(fieldsValue)
+      form.setFieldsValue({
+        name: '',
+        initials: ''
+      })
     })
   }
 

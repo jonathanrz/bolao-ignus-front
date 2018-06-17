@@ -1,6 +1,7 @@
 import React from 'react'
 import { Mutation } from 'react-apollo'
 
+import query from 'app/queries/Teams'
 import mutation from 'app/mutations/CreateTeam'
 import requireAuth from 'app/lib/requireAuth'
 import Layout from 'app/components/Layout'
@@ -28,7 +29,7 @@ class TeamsPage extends React.Component {
 const Page = requireAuth(TeamsPage)
 
 const ConnectedTeamsPage = () => (
-  <Mutation mutation={mutation}>
+  <Mutation mutation={mutation} refetchQueries={[{ query }]}>
     {(createTeam, response) => <Page createTeam={createTeam} response={response || {}} />}
   </Mutation>
 )
