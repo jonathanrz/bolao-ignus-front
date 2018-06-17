@@ -6,6 +6,12 @@ export function formatDate(date) {
   return format(new Date(date * 1000), 'DD/MM/YYYY')
 }
 
+export function formatDateAndHour(date) {
+  if (date === undefined || date === null) return 'Não informada'
+  if (!date) return 'Data inválida'
+  return format(new Date(date * 1000), 'DD/MM/YYYY HH:mm')
+}
+
 function isFloat(n) {
   return Number(n) === n && n % 1 !== 0
 }

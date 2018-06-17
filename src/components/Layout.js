@@ -64,6 +64,10 @@ const sideMenuLinks = [
   {
     label: 'Times',
     to: '/teams'
+  },
+  {
+    label: 'Jogos',
+    to: '/matchs'
   }
 ]
 
