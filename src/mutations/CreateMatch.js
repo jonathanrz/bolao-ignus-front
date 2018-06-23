@@ -1,7 +1,7 @@
 import gql from 'graphql-tag'
 
 export default gql`
-  mutation GameMatch($data: MatchInput!) {
+  mutation CreateMatch($data: MatchInput!) {
     createMatch(data: $data) {
       id
     }
