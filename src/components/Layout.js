@@ -62,16 +62,16 @@ const SidebarLink = styled.li`
 
 const sideMenuLinks = [
   {
+    label: 'Palpites',
+    to: '/'
+  },
+  {
     label: 'Times',
     to: '/teams'
   },
   {
     label: 'Jogos',
     to: '/matchs'
-  },
-  {
-    label: 'Palpites',
-    to: '/hunchs'
   }
 ]
 

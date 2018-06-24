@@ -5,7 +5,6 @@ import ApolloClient from 'apollo-boost'
 import { ApolloProvider } from 'react-apollo'
 
 import Login from './pages/Login'
-import Dashboard from './pages/Dashboard'
 import Teams from './pages/Teams'
 import Matchs from './pages/Matchs'
 import Hunchs from './pages/Hunchs'
@@ -28,11 +27,10 @@ const ApolloApp = () => (
   <ApolloProvider client={client}>
     <Router>
       <div>
-        <Route exact path="/" component={Dashboard} />
+        <Route exact path="/" component={Hunchs} />
         <Route path="/login" component={Login} />
         <Route path="/teams" component={Teams} />
         <Route path="/matchs" component={Matchs} />
-        <Route path="/hunchs" component={Hunchs} />
       </div>
     </Router>
   </ApolloProvider>
