@@ -11,7 +11,7 @@ import Matchs from './pages/Matchs'
 import Hunchs from './pages/Hunchs'
 
 const client = new ApolloClient({
-  uri: __API_URL__ || process.env.API_URL, //eslint-disable-line no-undef
+  uri: __API_URL__ || 'https://bolao-ignus-prd.herokuapp.com/', //eslint-disable-line no-undef
   request: async operation => {
     const token = localStorage.getItem('token')
     if (token) {
