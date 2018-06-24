@@ -1,20 +1,20 @@
 import React from 'react'
-import { graphql } from 'react-apollo'
+import { Query } from 'react-apollo'
 import { withRouter } from 'react-router-dom'
 
-import currentUserQuery from '../queries/CurrentUser'
+import query from 'app/queries/CurrentUser'
 
 export default WrappedComponent => {
-  class RequireAuth extends React.Component {
-    componentWillUpdate(nextProps) {
-      const { loading, me } = nextProps.data
-      if (!loading && !me) nextProps.history.push('/login')
-    }
-
-    render() {
-      return <WrappedComponent {...this.props} />
-    }
+  function RequireAuth(props) {
+    return (
+      <Query query={query}>
+        {({ loading, error, data }) => {
+          if (!loading && !data.me) props.history.push('/login')
+          return <WrappedComponent {...props} />
+        }}
+      </Query>
+    )
   }
 
-  return graphql(currentUserQuery)(withRouter(RequireAuth))
+  return withRouter(RequireAuth)
 }

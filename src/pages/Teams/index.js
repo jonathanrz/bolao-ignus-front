@@ -26,12 +26,10 @@ class TeamsPage extends React.Component {
   }
 }
 
-const Page = requireAuth(TeamsPage)
-
 const ConnectedTeamsPage = () => (
   <Mutation mutation={mutation} refetchQueries={[{ query }]}>
-    {(createTeam, response) => <Page createTeam={createTeam} response={response || {}} />}
+    {(createTeam, response) => <TeamsPage createTeam={createTeam} response={response || {}} />}
   </Mutation>
 )
 
-export default ConnectedTeamsPage
+export default requireAuth(ConnectedTeamsPage)
