@@ -18,23 +18,13 @@ const Versus = styled.div`
 class MatchForm extends React.Component {
   handleSubmit = e => {
     e.preventDefault()
-    const { form } = this.props
+    const { form, match } = this.props
     form.validateFields((err, fieldsValue) => {
       if (err) return
       const values = { ...fieldsValue }
-      const { date, time } = values
-      date.hour(time.hour())
-      date.minute(time.minute())
-      values.date = parseInt(date.format('X'))
-      values.time = undefined
+      values.matchId = match.id
 
-      this.props.createMatch(values)
-      form.setFieldsValue({
-        date: null,
-        time: null,
-        team1Initials: '',
-        team2Initials: ''
-      })
+      this.props.createHunch(values)
     })
   }
 
