@@ -68,6 +68,10 @@ const sideMenuLinks = [
   {
     label: 'Jogos',
     to: '/matchs'
+  },
+  {
+    label: 'Palpites',
+    to: '/hunchs'
   }
 ]
 

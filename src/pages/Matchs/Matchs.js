@@ -21,7 +21,7 @@ function formatData(data) {
 }
 
 function Matchs({ data }) {
-  return <Table data={sortBy(data, 'date').map(formatData)} columns={columns} />
+  return <Table data={data.map(formatData)} columns={columns} />
 }
 
 const MatchsQuery = () => (
@@ -29,7 +29,7 @@ const MatchsQuery = () => (
     {({ loading, error, data }) => {
       if (loading) return <Loader message={'Buscando jogos'} />
       if (error) return error.map(error => <div key={error}>{error.message}</div>)
-      return <Matchs data={data.matchs} />
+      return <Matchs data={sortBy(data.matchs, 'date')} />
     }}
   </Query>
 )
