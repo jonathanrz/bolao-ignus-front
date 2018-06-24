@@ -1,5 +1,6 @@
 import React from 'react'
 import { Mutation } from 'react-apollo'
+import { message } from 'antd'
 
 import query from 'app/queries/Hunchs'
 import mutation from 'app/mutations/CreateHunch'
@@ -16,6 +17,8 @@ class HunchsPage extends React.Component {
   }
 
   render() {
+    const { response } = this.props
+    if (response.data) message.success('Palpite salvo com sucesso')
     return (
       <Layout title="Palpites">
         <Hunchs createHunch={this.createHunch} />
