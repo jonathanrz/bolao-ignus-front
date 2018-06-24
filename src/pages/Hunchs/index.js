@@ -6,7 +6,7 @@ import mutation from 'app/mutations/CreateHunch'
 import requireAuth from 'app/lib/requireAuth'
 import Layout from 'app/components/Layout'
 
-import Matchs from './Matchs'
+import Hunchs from './Hunchs'
 
 class HunchsPage extends React.Component {
   createHunch = data => {
@@ -18,7 +18,7 @@ class HunchsPage extends React.Component {
   render() {
     return (
       <Layout title="Palpites">
-        <Matchs createHunch={this.createHunch} />
+        <Hunchs createHunch={this.createHunch} />
       </Layout>
     )
   }
