@@ -12,7 +12,7 @@ import Form from './Form'
 
 const Container = styled.div`
   max-width: 600px;
-  margin: 50px;
+  margin: 25px;
 `
 
 function Hunchs({ matchs, hunchs, createHunch }) {
