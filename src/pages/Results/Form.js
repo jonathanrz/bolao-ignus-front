@@ -6,7 +6,7 @@ import { formatDateAndHour } from 'app/utils/format'
 
 const Container = styled.div`
   max-width: 600px;
-  margin: 50px;
+  margin: 25px;
 `
 
 const Versus = styled.div`
