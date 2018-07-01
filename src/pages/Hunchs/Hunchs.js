@@ -30,7 +30,9 @@ function Hunchs({ matchs, hunchs, createHunch }) {
                   if (error) return null
                   const { hunchPoints } = data
                   return hunchPoints.points >= 0 ? (
-                    <div>{`Pontos: ${hunchPoints.points}`}</div>
+                    <div>{`Pontos: ${hunchPoints.points}.      Resultado: ${
+                      hunchPoints.result.team1Score
+                    } X ${hunchPoints.result.team2Score}`}</div>
                   ) : null
                 }}
               </Query>
