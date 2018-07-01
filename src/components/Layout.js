@@ -72,6 +72,10 @@ const sideMenuLinks = [
   {
     label: 'Jogos',
     to: '/matchs'
+  },
+  {
+    label: 'Resultados',
+    to: '/results'
   }
 ]
 
