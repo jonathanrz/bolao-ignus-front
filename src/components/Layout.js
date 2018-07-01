@@ -76,6 +76,10 @@ const sideMenuLinks = [
   {
     label: 'Resultados',
     to: '/results'
+  },
+  {
+    label: 'Ranking',
+    to: '/ranking'
   }
 ]
 

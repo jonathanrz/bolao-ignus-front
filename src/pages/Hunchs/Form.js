@@ -1,13 +1,8 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import styled from 'styled-components'
 import { Form, Input, Button } from 'antd'
 
 import { formatDateAndHour } from 'app/utils/format'
-
-const Container = styled.div`
-  max-width: 600px;
-  margin: 50px;
-`
 
 const Versus = styled.div`
   margin-right: 16px;
@@ -38,7 +33,7 @@ class MatchForm extends React.Component {
     const { match, hunch } = this.props
 
     return (
-      <Container>
+      <Fragment>
         <h4>{formatDateAndHour(match.date)}</h4>
         <Form onSubmit={this.handleSubmit} layout="inline">
           <Form.Item label={match.team1.initials}>
@@ -62,7 +57,7 @@ class MatchForm extends React.Component {
             </Button>
           </Form.Item>
         </Form>
-      </Container>
+      </Fragment>
     )
   }
 }

@@ -9,6 +9,7 @@ import Teams from './pages/Teams'
 import Matchs from './pages/Matchs'
 import Hunchs from './pages/Hunchs'
 import Results from './pages/Results'
+import Ranking from './pages/Ranking'
 
 const client = new ApolloClient({
   uri: __API_URL__ || 'https://bolao-ignus-prd.herokuapp.com/', //eslint-disable-line no-undef
@@ -33,6 +34,7 @@ const ApolloApp = () => (
         <Route path="/teams" component={Teams} />
         <Route path="/matchs" component={Matchs} />
         <Route path="/results" component={Results} />
+        <Route path="/ranking" component={Ranking} />
       </div>
     </Router>
   </ApolloProvider>
